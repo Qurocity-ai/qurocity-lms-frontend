@@ -10,11 +10,13 @@ export class UserService {
   isUserLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, private router: Router) {}
 
+  // https://lms-backend-1-deyq.onrender.com/api/payment/login
+
   userData : any = {};
 
   login(data: any) {
     return this.http
-      .post('https://lms-backend-1-deyq.onrender.com/api/payment/login', data)
+      .post('http://localhost:4000/api/payment/login', data)
       .subscribe((result: any) => {
         localStorage.setItem('token', result.token);
         this.isUserLoggedIn.next(true);

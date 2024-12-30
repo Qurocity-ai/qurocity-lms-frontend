@@ -6,20 +6,34 @@ import { authGuard } from './authGuard/auth.guard';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 
 const routes: Routes = [
+  // {
+  //   path:'',
+  //   component: LoginComponent
+  // },
   {
     path:'',
-    component: LoginComponent
-  },
-  {
-    path:'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuard]
+    canActivate: []
   },
   {
     path: 'playlist/:id',
     component: PlaylistComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   }
+  // {
+  //   path:'',
+  //   component: LoginComponent
+  // },
+  // {
+  //   path:'dashboard',
+  //   component: DashboardComponent,
+  //   canActivate: [authGuard]
+  // },
+  // {
+  //   path: 'playlist/:id',
+  //   component: PlaylistComponent,
+  //   canActivate: [authGuard]
+  // }
 ];
 
 @NgModule({
